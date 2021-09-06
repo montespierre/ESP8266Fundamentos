@@ -1,0 +1,192 @@
+[
+    {
+        "id": "e8e8a407f50fb2fe",
+        "type": "mqtt out",
+        "z": "23e843dbed8ec80a",
+        "name": "",
+        "topic": "esp8266/led1",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 720,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "50eb61c2c68d90a2",
+        "type": "mqtt out",
+        "z": "23e843dbed8ec80a",
+        "name": "",
+        "topic": "esp8266/led2",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 740,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d525d8a41b6b9ccf",
+        "type": "switch",
+        "z": "23e843dbed8ec80a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "aef7cc86ee5fa344"
+            ],
+            [
+                "6ccc40a2618e8359"
+            ]
+        ]
+    },
+    {
+        "id": "fcf457e1e902677a",
+        "type": "ui_text_input",
+        "z": "23e843dbed8ec80a",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "255ef046c5bf3abb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "payload2",
+        "topicType": "msg",
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "d525d8a41b6b9ccf"
+            ]
+        ]
+    },
+    {
+        "id": "aef7cc86ee5fa344",
+        "type": "change",
+        "z": "23e843dbed8ec80a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 60,
+        "wires": [
+            [
+                "e8e8a407f50fb2fe"
+            ]
+        ]
+    },
+    {
+        "id": "6ccc40a2618e8359",
+        "type": "change",
+        "z": "23e843dbed8ec80a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 180,
+        "wires": [
+            [
+                "50eb61c2c68d90a2"
+            ]
+        ]
+    },
+    {
+        "id": "57180ba4093cb330",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "255ef046c5bf3abb",
+        "type": "ui_group",
+        "name": "Opcion5",
+        "tab": "70df625f18569beb",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "70df625f18569beb",
+        "type": "ui_tab",
+        "name": "Device4",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
