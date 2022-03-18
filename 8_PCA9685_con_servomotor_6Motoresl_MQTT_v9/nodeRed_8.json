@@ -1,0 +1,435 @@
+[
+    {
+        "id": "043c9ef01a3417a2",
+        "type": "ui_form",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "label": "",
+        "group": "88dd7fe5e195bb8d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "CodigoProducto",
+                "value": "codProd",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "codProd": ""
+        },
+        "payload": "",
+        "submit": "ACEPTAR",
+        "cancel": "Cancelar",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "6da97b11a6c278a7"
+            ]
+        ]
+    },
+    {
+        "id": "6da97b11a6c278a7",
+        "type": "function",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "func": "p = msg.payload;\nnode.log(typeof p);\nmsg.payload = p.codProd;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 100,
+        "wires": [
+            [
+                "e802cd3e0d58e696"
+            ]
+        ]
+    },
+    {
+        "id": "e802cd3e0d58e696",
+        "type": "switch",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "310d5bbdd8a8693e"
+            ],
+            [
+                "93c385169f5c0f58"
+            ],
+            [
+                "9d4ee351faacc1e8"
+            ],
+            [
+                "c10263ed0c5db532"
+            ],
+            [
+                "949f410b73c35cbe"
+            ],
+            [
+                "b6c4dac033b46a79"
+            ]
+        ]
+    },
+    {
+        "id": "938e582ecb7a7fea",
+        "type": "mqtt out",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "topic": "esp8266/moverMotor1",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 940,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "a79d02e6458d2866",
+        "type": "mqtt out",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "topic": "esp8266/moverMotor2",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 940,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1994d5dc8358714f",
+        "type": "mqtt out",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "topic": "esp8266/moverMotor3",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 940,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "cc3773967c093b84",
+        "type": "mqtt out",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "topic": "esp8266/moverMotor4",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 940,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "323e78cb1ee70be4",
+        "type": "mqtt out",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "topic": "esp8266/moverMotor5",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 940,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "2fe4aba41cd003db",
+        "type": "mqtt out",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "topic": "esp8266/moverMotor6",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "57180ba4093cb330",
+        "x": 940,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "310d5bbdd8a8693e",
+        "type": "change",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 20,
+        "wires": [
+            [
+                "938e582ecb7a7fea"
+            ]
+        ]
+    },
+    {
+        "id": "93c385169f5c0f58",
+        "type": "change",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 60,
+        "wires": [
+            [
+                "a79d02e6458d2866"
+            ]
+        ]
+    },
+    {
+        "id": "9d4ee351faacc1e8",
+        "type": "change",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 100,
+        "wires": [
+            [
+                "1994d5dc8358714f"
+            ]
+        ]
+    },
+    {
+        "id": "c10263ed0c5db532",
+        "type": "change",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 140,
+        "wires": [
+            [
+                "cc3773967c093b84"
+            ]
+        ]
+    },
+    {
+        "id": "949f410b73c35cbe",
+        "type": "change",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 180,
+        "wires": [
+            [
+                "323e78cb1ee70be4"
+            ]
+        ]
+    },
+    {
+        "id": "b6c4dac033b46a79",
+        "type": "change",
+        "z": "be5d3a98e015f874",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 220,
+        "wires": [
+            [
+                "2fe4aba41cd003db"
+            ]
+        ]
+    },
+    {
+        "id": "88dd7fe5e195bb8d",
+        "type": "ui_group",
+        "name": "option7",
+        "tab": "3567e4946666d01d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "57180ba4093cb330",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3567e4946666d01d",
+        "type": "ui_tab",
+        "name": "Device6",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
