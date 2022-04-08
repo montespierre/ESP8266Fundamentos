@@ -3,7 +3,7 @@
 // https://www.youtube.com/watch?v=L6HiulJPzgE
 // Mejorar MQTT
 // https://github.com/montespierre/ESP8266Fundamentos/blob/version1/4_MQTT_v3-vRPZero/4_MQTT_v3-vRPZero.ino
-// Falta !!!!!
+// OK
 #include <PubSubClient.h>
 #include <ESP8266WiFi.h>
 
@@ -29,20 +29,22 @@ PubSubClient client(espClient);
 void callback(char* topic, byte* payload, unsigned int length){
   Serial.print("Mensaje recibido en topic: ");
   Serial.print(topic);
-  Serial.print("Message: ");
+  Serial.print(" Mensaje: ");
 
   String message;
   // Concatenando mensajes en variable mensaje
   for(int i = 0; i < length; i++){
     message = message + (char)payload[i]; // char convierte *byte a String
   }
-  Serial.print(message);
+  Serial.println(message);
   if(message == "0"){
     digitalWrite(relay, LOW);
+    Serial.println("Foco apagado");
   }
   // SI el mensaj es 1 prender relay
   if(message == "1"){
     digitalWrite(relay, HIGH);
+    Serial.println("Foco prendido");
   }
   Serial.println();
 }
