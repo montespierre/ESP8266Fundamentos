@@ -3,7 +3,7 @@
 // https://www.youtube.com/watch?v=L6HiulJPzgE
 // Mejorar MQTT
 // https://github.com/montespierre/ESP8266Fundamentos/blob/version1/4_MQTT_v3-vRPZero/4_MQTT_v3-vRPZero.ino
-// OK
+// Orange Pi PC
 #include <PubSubClient.h>
 #include <ESP8266WiFi.h>
 
@@ -17,7 +17,7 @@ const char* password = "df97xBTSeCKy";
 /////////////////////////////// wifi credentials (fin) ////////////////////////////////////////////
 
 /////////////////////////////// mqtt credentials (inicio) ////////////////////////////////////////////
-const char* mqtt_server = "mono.local";
+const char* mqtt_server = "192.168.1.40";
 // Crear una ionstancia de WIfi client
 WiFiClient espClient;
 // Crear una instancia del MQTT client, basado en el cliente Wifi
