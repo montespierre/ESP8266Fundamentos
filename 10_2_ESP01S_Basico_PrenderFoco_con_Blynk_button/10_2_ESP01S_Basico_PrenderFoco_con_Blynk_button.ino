@@ -1,7 +1,7 @@
 // https://www.youtube.com/watch?v=8IxdEdTLOGY
 // Tutorial
 // https://www.youtube.com/watch?v=L6HiulJPzgE
-// Mejorar MQTT
+// Mejorar MQTT v2
 // https://github.com/montespierre/ESP8266Fundamentos/blob/version1/4_MQTT_v3-vRPZero/4_MQTT_v3-vRPZero.ino
 // Orange Pi PC
 #include <PubSubClient.h>
